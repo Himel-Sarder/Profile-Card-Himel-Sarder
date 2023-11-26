@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile Card</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <style>
+        .social-share {
+            text-align: center;
+        }
+
+        .social-share .row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            // Retrieve like count from localStorage or set to 20 if not present
+            var likeCount = parseInt(localStorage.getItem("likeCount")) || 20;
+
+            // Display initial like count
+            $(".social-share .row span").text(likeCount);
+
+            // Handle like button click
+            $(".buttons button.love").on("click", function(){
+                // Increment like count by 1
+                likeCount += 1;
+
+                // Save updated like count to localStorage
+                localStorage.setItem("likeCount", likeCount.toString());
+
+                // Display updated like count
+                $(".social-share .row span").text(likeCount);
+            });
+
+            // Handle message button click
+            $(".buttons button.message").on("click", function(){
+                // Redirect to a Google link (replace with your desired link)
+                window.open('https://ngl.link/himel89791', '_blank');
+            });
+
+            // Handle Facebook icon click
+            $(".social-icons a.fb").on("click", function(){
+                // Redirect to the Facebook profile link
+                window.open('https://www.facebook.com/profile.php?id=61552315582734', '_blank');
+            });
+            // Handle Likedin icon click
+            $(".social-icons a.twitter").on("click", function(){
+                // Redirect to the Facebook profile link
+                window.open('https://www.linkedin.com/in/himel-sarder', '_blank');
+            });
+            // Handle Telegram icon click
+            $(".social-icons a.insta").on("click", function(){
+                // Redirect to the Facebook profile link
+                window.open('https://t.me/Antu242', '_blank');
+            });
+            // Handle Youtube icon click
+            $(".social-icons a.yt").on("click", function(){
+                // Redirect to the Facebook profile link
+                window.open('https://www.youtube.com/channel/UCY5pLqmYpmKls535prUQDGQ', '_blank');
+            });
+            // Handle three-dot icon click
+            $(".icon.dots").on("click", function(){
+                // Show "I LOVE YOU" message
+                alert("Developed by Himel Sarder.\nDept. of CSE, BSFMSTU\n\nCopyright ©2023");
+            });
+        });
+    </script>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="img-area">
+      <div class="inner-area">
+        <img src="linkin picture.png" alt="">
+      </div>
+    </div>
+    <div class="icon arrow"><i class="fas fa-arrow-left"></i></div>
+    <div class="icon dots"><i class="fas fa-ellipsis-v"></i></div>
+    <div class="name">Himel Sarder</div>
+    <div class="about">Frontend Web Developer</div>
+    <div class="social-icons">
+      <a href="#" class="fb"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" class="twitter"><i class="fab fa-linkedin"></i></a>
+      <a href="#" class="insta"><i class="fab fa-telegram"></i></a>
+      <a href="#" class="yt"><i class="fab fa-youtube"></i></a>
+    </div>
+    <div class="buttons">
+      <button class="love">Love</button>
+      <button class="message">Message</button>
+    </div>
+    <div class="social-share">
+      <div class="row">
+        <i class="far fa-heart"></i>
+        <i class="icon-2 fas fa-heart"></i>
+        <span>0</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
